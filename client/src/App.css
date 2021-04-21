@@ -2,6 +2,61 @@
   text-align: center;
 }
 
+.rovers-container{
+  background-color: rgb(236, 234, 234);
+  margin: 50px 200px;
+}
+.rovers-container,
+.rovers-header,
+.rover-block,
+.name,
+.new-rover{
+  border: solid black 1px;
+}
+
+.rovers-header{
+padding: 20px;
+margin: 0px;
+}
+
+.rover-block{
+  width: 25%;
+  margin: 30px;
+}
+.rovers{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+ 
+.name{
+  margin-top: 0;
+  padding: 10px;
+}
+
+.btn-style{
+  margin:20px;
+  right: 0;
+}
+
 .new-rover{
   position: absolute;
+  background-color: white;
+  padding: 20px;
+}
+
+.rover-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-name{
+  border-radius: 5px;  
+}
+
+.input-name,
+.btn-style{
+  background-color: rgb(158, 157, 157);
+  padding: 10px;
 }

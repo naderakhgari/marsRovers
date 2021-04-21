@@ -15,14 +15,14 @@ const MarsRoverForm = ({ setIsAdded }) => {
     }
 
     return (
-        <div className='new-rover App'>
+        <div className='new-rover'>
             <h1>New Rover</h1>
             <form>
                 <h3>Launch new rover to mars</h3>
-                <input onChange={inputHandler} name={'name'} value={name} type='text' />
+                <input onChange={inputHandler} name={'name'} value={name} type='text' placeholder='Rover name' className='input-name' />
                 <div>
-                    <button onClick={() => setIsAdded(false)}>Cancel</button>
-                    <button onClick={launchHanddler}>Launch</button>
+                    <button className='btn-style' onClick={() => setIsAdded(false)}>Cancel</button>
+                    <button className='btn-style' onClick={launchHanddler}>Launch</button>
                 </div>
             </form>
         </div>

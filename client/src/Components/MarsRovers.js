@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
 import Rover from './Rover'
+import MarsRoverForm from './MarsRoverForm';
 
-const MarsRovers = ({ setIsAdded }) => {
+const MarsRovers = () => {
 
     const [roverData, setRoverData] = useState([])
+    const [isAdded, setIsAdded] = useState(false)
 
     useEffect(() => {
         fetch(`http://localhost:4444/rovers`)
@@ -14,14 +16,19 @@ const MarsRovers = ({ setIsAdded }) => {
     }, [])
 
     return (
-        <div>
-            <h1>Mars Rovers</h1>
-            <div>
+        <div className='rovers-container'>
+            <h1 className='rovers-header'>Mars Rovers</h1>
+            <div className='rovers'>
                 {roverData.length > 0 ? (
-                    roverData.map((rover,index) => <Rover rover={rover} key={index}/>)
+                    roverData.map((rover, index) => <Rover rover={rover} key={index} />)
                 ) : null}
             </div>
-            <button onClick={() => setIsAdded(true)}>New Rover</button>
+            <div className='rover-form'>
+                {isAdded ? (
+                    <MarsRoverForm setIsAdded={setIsAdded} />
+                ) : null}
+            </div>
+            <button onClick={() => setIsAdded(true)} className='btn-style'>New Rover</button>
         </div>
     )
 }
